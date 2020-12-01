@@ -1,12 +1,14 @@
 import ArgumentParser
+import Day1
 import Foundation
 
 struct AdventOfCode2020 : ParsableCommand {
     static var configuration = CommandConfiguration (
         commandName: "aoc2020",
         abstract: "Puzzle solutions to Advent of Code 2020 by @RobJDavey",
-        version: "2020.0.0",
+        version: "2020.1.0",
         subcommands: [
+            Day1.self,
         ]
     )
     

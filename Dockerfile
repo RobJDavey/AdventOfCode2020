@@ -3,6 +3,7 @@ WORKDIR /app
 COPY Package.swift ./
 RUN swift package update
 COPY ./ ./
+RUN swift test
 RUN swift build -c release
 RUN mv /app/.build/release/AdventOfCode2020 /app/.build/release/aoc2020
 
