@@ -17,6 +17,7 @@ let package = Package(
                 "Day1",
                 "Day2",
                 "Day3",
+                "Day4",
             ]
         ),
         .target(
@@ -72,6 +73,22 @@ let package = Package(
             name: "Day3Tests",
             dependencies: [
                 "Day3",
+            ]
+        ),
+        .target(
+            name: "Day4",
+            dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+                "Shared",
+            ],
+            resources: [
+                .copy("input.txt"),
+            ]
+        ),
+        .testTarget(
+            name: "Day4Tests",
+            dependencies: [
+                "Day4",
             ]
         ),
     ]
