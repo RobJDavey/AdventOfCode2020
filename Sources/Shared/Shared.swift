@@ -16,7 +16,7 @@ public protocol FileInputCommand : InputCommand {
     var input: String? { get }
     
     func defaultInputFile() -> URL?
-    func convert(_ rawInput: String) -> InputType
+    func convert(_ rawInput: String) throws -> InputType
 }
 
 public extension FileInputCommand {
@@ -37,7 +37,7 @@ public extension FileInputCommand {
             throw FileInputCommandError.missingDefault
         }
         
-        let rawInput = convert(text)
+        let rawInput = try convert(text)
         try run(rawInput)
     }
 }
