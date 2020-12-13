@@ -11,13 +11,14 @@ import Day9
 import Day10
 import Day11
 import Day12
+import Day13
 import Foundation
 
 struct AdventOfCode2020 : ParsableCommand {
     static var configuration = CommandConfiguration (
         commandName: "aoc2020",
         abstract: "Puzzle solutions to Advent of Code 2020 by @RobJDavey",
-        version: "2020.12.0",
+        version: "2020.13.0",
         subcommands: [
             Day1.self,
             Day2.self,
@@ -31,6 +32,7 @@ struct AdventOfCode2020 : ParsableCommand {
             Day10.self,
             Day11.self,
             Day12.self,
+            Day13.self,
         ]
     )
     
