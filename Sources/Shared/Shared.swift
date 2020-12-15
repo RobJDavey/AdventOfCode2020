@@ -12,11 +12,33 @@ public protocol InputCommand : ParsableCommand {
     func run(_ input: InputType) throws
 }
 
+public protocol StringInputCommand : InputCommand {
+    var input: String? { get }
+    
+    func defaultInput() -> String
+    func convert(_ rawInput: String) throws -> InputType
+}
+
 public protocol FileInputCommand : InputCommand {
     var input: String? { get }
     
     func defaultInputFile() -> URL?
     func convert(_ rawInput: String) throws -> InputType
+}
+
+public extension StringInputCommand {
+    func run() throws {
+        let rawInput: String
+        
+        if let input = input {
+            rawInput = input
+        } else {
+            rawInput = defaultInput()
+        }
+        
+        let converted = try convert(rawInput)
+        return try run(converted)
+    }
 }
 
 public extension FileInputCommand {
