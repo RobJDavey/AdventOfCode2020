@@ -15,6 +15,7 @@ import Day12Tests
 import Day13Tests
 import Day14Tests
 import Day15Tests
+import Day16Tests
 
 var tests = [XCTestCaseEntry]()
 tests += Day1Tests.allTests()
@@ -32,4 +33,5 @@ tests += Day12Tests.allTests()
 tests += Day13Tests.allTests()
 tests += Day14Tests.allTests()
 tests += Day15Tests.allTests()
+tests += Day16Tests.allTests()
 XCTMain(tests)
